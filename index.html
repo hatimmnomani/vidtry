@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="output.css" rel="stylesheet">
+  <script src="index.js" type="module"></script>
+  <title>Video Trial platform</title>
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline content-center">
+    Lets try and use the video player
+  </h1>
+  <!-- remove `controls` attribute if you're designing a custom UI -->
+  <button id="clickme" class="text-xl">test click</button>
+  <div class="w-full">
+
+    <media-player
+      src="https://media-files.vidstack.io/720p.mp4"
+      poster="https://media-files.vidstack.io/poster.png"
+      controls
+    >
+      <media-outlet></media-outlet>
+    </media-player>
+  </div>
+
+</body>
+</html>
