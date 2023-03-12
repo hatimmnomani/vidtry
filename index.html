@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="output.css" rel="stylesheet">
-  <script src="index.js" type="module"></script>
-  <title>Video Trial platform</title>
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline content-center">
-    Lets try and use the video player
-  </h1>
-  <!-- remove `controls` attribute if you're designing a custom UI -->
-  <button id="clickme" class="text-xl">test click</button>
-  <div class="w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/21246a91/www-widgetapi.vflset/www-widgetapi.js" async=""></script>
+    <script src="https://unpkg.com/plyr@3/dist/plyr.min.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.7/plyr.css">
+    <title>Video Trial platform</title>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline content-center">
+      Lets try and use the video player
+    </h1>
+    <!-- remove `controls` attribute if you're designing a custom UI -->
+    <button id="clickme" class="text-xl">test click</button>
+    <div class="w-full">
+      <div class="container">
+	      <div id="player" controls data-plyr-config='{ "title": "Example Title" }' data-plyr-provider="youtube" data-plyr-embed-id="https://www.youtube.com/embed/bTqVqk7FSmY?modestbranding=1&showinfo=0&fs=0&rel=0"></div>
+      </div>
+    </div>
+    <script src="https://cdn.plyr.io/3.7.7/demo.js" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    const player = new Plyr('#player', {});
 
-    <media-player
-      src="https://media-files.vidstack.io/720p.mp4"
-      poster="https://media-files.vidstack.io/poster.png"
-      controls
-    >
-      <media-outlet></media-outlet>
-    </media-player>
-  </div>
+    // Expose player so it can be used from the console
+    window.player = player;
+    window.setTimeout(() => {
+      editYTplayr();
+    }, 2000);
+    function editYTplayr(params) {
+      let frame = document.querySelector(".plyr__video-wrapper.plyr__video-embed > iframe");
+      console.log(frame);
+      let overlay = frame.contentWindow.document.querySelector(".ytp-pause-overlay-container");
+      console.log(overlay);
+    }
 
-</body>
+  </script>
 </html>

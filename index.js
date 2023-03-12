@@ -1,5 +1,3 @@
-import "./node_modules/vidstack/styles/defaults.css";
-
 import { defineCustomElements } from "./node_modules/vidstack/elements.d.ts";
 
 defineCustomElements();

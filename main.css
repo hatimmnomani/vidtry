@@ -1,3 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.ytp-pause-overlay{
+    display: none !important;
+}
+.plyr__video-embed iframe {
+  top: -50%;
+  height: 200%;
+}
+#clickme{
+  background-color: aqua;
+}
+div.ytp-chrome-top-buttons{
+  display: none !important;
+  width: 1px !important;
+  height: 1px   !important;
+}
+.plyr{
+  --plyr-badge-border-radius: 10px;
+  --plyr-menu-background: rgba(255, 255, 0, 0.9);
+  --plyr-line-height: 20px;
+}
+.player {
+  --plyr-badge-border-radius: 10px;
+  --plyr-menu-background: rgba(255, 255, 0, 0.9);
+  --plyr-line-height: 20px;
+}
